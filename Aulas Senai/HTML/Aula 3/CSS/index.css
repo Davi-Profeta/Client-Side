@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ /* Topo */ 
+header{
+    display: flex;
+}
+
+#logo{
+    margin-left: 2rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+a{
+    text-decoration: none; 
+    padding: 2rem;
+}
+
+/* Corpo */
+#p{
+    display: flex;
+    justify-content: center;
+}
+#photoP{
+    width: 200vh;
+}
+
+#para{
+    padding: 1.5rem;
+}
+
+/* Footer */
+footer{
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+

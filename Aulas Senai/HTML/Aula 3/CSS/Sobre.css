@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ /* Topo */ 
+header{
+    display: flex;
+    justify-content: center;
+}
+
+#logo{
+    margin-left: 2rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+a{
+    text-decoration: none; 
+    padding: 2rem;
+}
+
+/* Corpo */
+#contato{
+    display: flex;
+    justify-content: center;
+}
+
+#email{
+    margin-right: 27rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#para{
+    margin-top: 1rem;
+    width: 113ch;
+    margin-left: 21.5rem;
+    display: flex;
+    justify-content: center;
+}
