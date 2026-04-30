@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    border: solid black 5px;
+    background-color: rgb(77, 165, 77);
+    height: 20vh;
+}
+
+.title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.7rem;
+    padding-left: 2rem;
+}
+
+.tabela{
+    display: flex;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+
+/* Tabela */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.meio{
+    margin-top: 2rem;
+}
+
+.volte{
+    margin-top: 1rem;
+}
+
+

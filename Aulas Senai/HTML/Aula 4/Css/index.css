@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    border: solid black 5px;
+    background-color: rgb(77, 165, 77);
+    height: 20vh;
+}
+
+.title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.7rem;
+    padding-left: 2rem;
+}
+
+.tabela{
+    display: flex;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+/* Tabela de preços */
+main{
+    border: solid black 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.table{
+    background-color: rgb(77, 165, 77);
+    border: solid black 5px;
+    border-radius: 12px;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+th{
+    font-size: 1.2rem;
+}
+
+.produto{
+    width: 250px;
+}
+
+.preco{
+    width: 250px;
+}
+
+.descri{
+    width: 250px;
+}
+
+img{
+    width: 250px;
+    height: auto; 
+    display: block;
+}
+
+td{
+    border: solid black 5px;
+    background-color: white;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.2rem;
+}
