@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Topo */
+header{
+    background-color: rgb(194, 11, 11);
+    color: white;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    padding-left: 3.5rem;
+    font-size: 2.7rem
+}
+nav{
+    display: flex;
+    justify-content: end;
+    flex: 1;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+a{
+    padding: 2rem;
+    text-decoration: none;
+    color: white;
+}
+
+/*Conteudo*/
+body{
+    background-color: black;
+}
+
+main{
+    display: flex;
+}
+
+section{
+    border: solid 2px white;
+    padding-left: 3rem;
+    padding-top: 3rem;
+    padding-right: 3rem;
+}
+
+img{
+    border: solid 2px white;
+    border-radius: 20px;
+    width: 848px;
+    height: 478px;
+}
+
+h2{
+    font-size: 2rem; 
+    color: rgb(194, 11, 11); 
+}
+
+.new1{
+    color: white;
+    margin-bottom: 3.5rem;
+    max-width: 190vh;
+}
+
+.new2{
+    color: white;
+    margin-bottom: 3.5rem;
+    max-width: 190vh;
+}
+
+.new3{
+    color: white;
+    margin-bottom: 3.5rem;
+    max-width: 190vh;
+}
+
+aside{
+    border: solid 1px white;
+    display: flex;
+    width: 40vh;
+    height: 310vh;
+}
+
+ol{
+    padding: 2rem;
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+}
+
+#mais{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.nots{
+    padding-top: 1.5rem;
+    padding-left: 0.5rem;
+    transition: 0.2s;
+}
+
+.nots:hover{
+    transition: 1.1s;
+    font-size: 20px;
+}
+
+
+/*Rodape*/
+footer{
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: solid 2px white;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
