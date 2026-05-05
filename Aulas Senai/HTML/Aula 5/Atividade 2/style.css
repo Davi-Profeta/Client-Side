@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+/* Topo */
+header{
+    background-color: #1E441E;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    border: solid black 2px;
+}
+
+.sub{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    height: 10vh;
+}
+
+aside{
+    border: solid black 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+a{
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover{
+    transition: 0.7s;
+    color: black;
+}
+
+/* Corpo */
+body{
+    background-color: #2A7221;
+}
+
+main{
+    border: solid black 5px;
+}
+
+#list{
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    font-size: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+section{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cursos{
+    background-color: #1E441E;
+    width: 400px;
+    height: 700px;
+    border: solid white 5px;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-bottom: 5rem;
+    
+    /* PASSO 1: Mova a transição para cá e defina a propriedade */
+    /* Isso faz a animação ser suave na entrada E na saída do mouse */
+    transition: transform 0.5s ease-out; /* Duração de 0.5s para 'transform' */
+}
+
+.cursos:hover{
+    /* PASSO 2: Defina o efeito de crescimento */
+    /* Scale(1.05) aumenta o tamanho em 5%. Você pode ajustar esse valor. */
+    transform: scale(1.05);
+
+    /* PASSO 3: Opcional - Adicionar sombra para dar destaque */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+}
+
+ol{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p{
+    padding-bottom: 10px;
+}
+img{
+    border: solid white 2px;
+    border-radius: 20px;
+    width: 250px;
+    height: 250px;
+}
