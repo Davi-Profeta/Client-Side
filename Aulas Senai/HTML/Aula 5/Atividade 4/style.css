@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FFA07A;
+    border: black solid 4px;
+}
+
+/* Topo */
+header{
+    border: black solid 2px;
+    background-color: #D2691E;
+    color: white;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 95vw;
+    margin-top: 2rem;
+    border-radius: 20px;
+}
+
+h1{
+    padding-left: 3.5rem;
+    font-size: 2.7rem
+}
+nav{
+    display: flex;
+    justify-content: end;
+    flex: 1;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+a{
+    padding: 2rem;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Corpo */
+aside{
+    border: black solid 2px;
+    display: flex;
+    border-radius: 15px;
+    width: 95vw;
+    margin: auto;
+    margin-top: 2rem;
+    height: 37.5vh;
+    background-color: #D2691E;
+    padding: 1.5rem;
+    color: white;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-height: 28vh;
+}
+
+h2{
+    margin-left: 0;
+}
+
+.p{
+    display: flex;
+    justify-content:center;
+}
+
+#coxinha{
+    background-image: url(img/COXINHA-scaled.jpg);
+    background-size: cover;       
+    background-position: center;
+    color: black;  
+}
+
+#lasanha{
+    background-image: url(img/download.jpg);
+    background-size: cover;       
+    background-position: center;  
+}
+
+#tropeiro{
+    background-image: url(img/images.jpg);
+    background-size: cover;       
+    background-position: center;  
+}
+
+.promo{
+    background-color: #FFA07A;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 5rem;
+    margin-right: 3rem;
+    height: 23vh;
+    width: 180px;
+    border: solid white 2px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.promo:hover{
+    transform: scale(1.1);
+}
+
+.prato{
+    display: flex;
+    border: solid white 2px;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 0; 
+    max-height: 28vh;
+    align-items: center;
+    background-color: #FFA07A;
+    color: black;
+}
+
+#prato{
+    background-image: url(img/bar-da-lora-figado-com-jilo-1024x682-optimized.webp);
+    background-size: cover;
+    background-position: center;
+    background-color: #FFA07A;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 3rem;
+    height: 23vh;
+    width: 180px;
+    border: solid white 2px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+#prato:hover{
+    transform: scale(1.1);
+}
+
+/* Listas */
+.middle{
+    display: flex;
+    border: black solid 2px;
+    border-radius: 15px;
+    width: 95vw;
+    margin: auto;
+    margin-top: 2rem;
+    height: 50vh;
+    background-color: #D2691E;
+    padding: 1.5rem;
+    color: white;
+}
+
+.cardapio{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 260px;
+    height: 32vh;
+}
+
+#hamb{
+    background-image: url(img/230453.avif);
+    background-size: cover;
+    background-position: center;
+    background-color: #FFA07A;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 23vh;
+    width: 180px;
+    border: solid white 2px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    margin-left: 40px;
+}
+
+#pizza{
+    background-image: url(img/1821a30a8a8acec9f74a1372be582610_sem_título_\(18\).jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #FFA07A;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 23vh;
+    width: 180px;
+    border: solid white 2px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    margin-left: 40px;
+}
+
+#refri{
+    background-image: url(img/images\ \(1\).jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #FFA07A;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 23vh;
+    width: 180px;
+    border: solid white 2px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    margin-left: 40px;
+}
+
+#hamb:hover{
+    transform: scale(1.1);
+}
+#pizza:hover{
+    transform: scale(1.1);
+}
+#refri:hover{
+    transform: scale(1.1);
+}
+
+.funciona{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+ol{
+    list-style-type: none;
+    border: solid 2px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    padding: 5rem 1.5rem;
+    margin-right: 2rem;
+    background-color: #FFA07A;
+    color: black;
+}
+
+article{
+    margin: 2rem;
+}
