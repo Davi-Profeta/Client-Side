@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Topo */
+:root{
+    --azul-principal: rgb(7, 25, 58);
+    --verde-destaque: rgb(92, 214, 76);
+    --preto-fundo: rgb(15, 18, 28);
+    --verde-escuro: rgb(46, 138, 52);
+    --branco: rgb(245, 245, 245);
+}
