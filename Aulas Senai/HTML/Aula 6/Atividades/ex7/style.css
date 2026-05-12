@@ -1,0 +1,9 @@
+.banner{
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/17591b68639273.5b63ae15825b5.jpg);
+    background-size: contain;
+    background-position: top;
+    height: 70vh;
+    width: 50vw;
+    border: solid black 3px;
+    margin: 2rem;
+}
