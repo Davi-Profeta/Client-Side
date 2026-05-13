@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-image: url(img/ChatGPT\ Image\ 13\ de\ mai.\ de\ 2026\,\ 11_00_44.png);
+    background-size: cover;
+    background-position: center 28%;
+}
+
+.conteiner{
+    display: flex;
+    width: 100vw;
+    color: #2D3436;
+}
+
+header{
+    background-color: #F5F7FA;
+    width: 50vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    border: solid black;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+nav{
+    background-color: #F5F7FA;
+    width: 50vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black;
+    border-radius: 20px;
+}
+
+a{
+    color: #2D3436;
+    text-decoration: none;
+    padding: 2rem;
+    font-size: 1.5rem;
+    transition: all 1s ease;
+}
+
+a:hover{
+    transform: scale(1.25);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 50vh;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    border: solid white 2px;
+    width: 50vh;
+    padding: 2rem;
+    color: white;
+    box-shadow: 10px 10px 20px gray;
+    transition: all 1s ease;
+}
+.banner:hover{
+    transform: scale(1.2);
+}
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
+    width: 30vw;
+    height: 20vh;
+}
+
+.card{
+    border: solid white 2px;
+    border-radius: 20px;
+    background-color: #F5F7FA;
+    padding: 3rem;
+    color: #121212;
+    box-shadow: 10px 10px 20px gray;
+    transition: all 1s ease;
+}
+.card:hover{
+    transform: scale(1.1);
+}
+
+footer{
+    color: #121212;
+    background-color: #F5F7FA;
+    border: solid #F5F7FA 2px;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 40vw;
+    width: 20vw;
+}

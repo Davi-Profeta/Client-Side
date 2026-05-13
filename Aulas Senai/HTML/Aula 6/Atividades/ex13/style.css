@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.maciota{
+    border: solid 2px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 5rem;
+    box-shadow: 10px 10px 20px gray;
+    transition: all 1s ease;
+}
+.maciota:hover{
+    transform: scale(1.05);
+}
+
+button{
+    width: 5rem;
+    height: 1.5rem;
+    transition: all 1s ease;
+    border: solid 2px black;
+}
+
+button:hover{
+    transform: scale(1.2);
+    background-color: green;
+    color: aliceblue;
+}

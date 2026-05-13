@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-collapse: collapse;
+    height: 100vh;
+}
+
+th{
+    border: 2px solid black;
+    padding: 8px;
+    background-color: burlywood;
+    text-align: center;
+}
+
+td{
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+}
