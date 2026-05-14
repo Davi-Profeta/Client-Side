@@ -1,0 +1,42 @@
+body {
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: #333;
+    border: 3px solid #111;
+    border-radius: 10px;
+    padding: 20px;
+
+    /* Vamos dar uma altura fixa para facilitar a visualização do alinhamento vertical */
+    height: 300px;
+
+}
+
+.item {
+    background-color: #3498db;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+
+    /* Tamanho fixo para os nossos itens */
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+
+.container {
+    background-color: #333;
+    border: 3px solid #111;
+    border-radius: 10px;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
