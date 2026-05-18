@@ -1,0 +1,76 @@
+section {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+/*Cel p*/
+@media only screen and (max-width: 399px) {
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    .card {
+        width: 90% !important;
+        min-width: unset;
+    }
+}
+
+/*Cel*/
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .card {
+        width: 85% !important;
+        max-width: 33rem;
+        min-width: unset;
+    }
+}
+
+/*Tablet*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    section {
+        display: contents;
+    }
+
+    .card {
+        width: 45% !important;
+        max-width: 320px;
+    }
+}
+
+
+/*PC e tv*/
+@media only screen and (min-width: 1025px) {
+
+    section {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .card {
+        width: 18rem !important;
+    }
+}
