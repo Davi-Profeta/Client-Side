@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(70, 142, 236);
+    font: normal arial;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    color: white;
+    text-align: center;
+}
+
+img{
+    border: solid black 3px;
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
+
+section{
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 15px;
+    width: 50vw;
+    height: 35vh;
+    margin: auto;
+    box-shadow: 5px 5px 10px black;
+}
+
+#turno{
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+#img{
+    display: flex;
+    justify-content: center;
+}
+
+footer{
+    color: aliceblue;
+}
