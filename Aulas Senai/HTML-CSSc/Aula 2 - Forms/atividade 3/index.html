@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    
+    <form action="">
+ 
+        <h1>Cadastro de Aluno</h1>
+        
+        <main>
+ 
+            <h2>Dados Pessoais</h2>
+ 
+            <div class="dados">
+                <label for="aluno_">Nome do Aluno</label>
+                <input type="text" name="aluno" id="aluno" required>
+            </div>
+ 
+            <section>
+ 
+            <div class="dados">
+                <label for="aluno">Nome da mãe</label>
+                <input type="text" name="mãe" id="mae" required>
+            </div>
+ 
+            <div class="dados">
+                <label for="aluno">Nome do Pai</label>
+                <input type="text" name="pai" id="pai" required>
+            </div>
+
+            </section>
+            
+            <section>
+
+            <div class="dados">
+                <label for="aluno">CPF</label>
+                <input type="tel" name="CPF" id="CPF" required maxlength="11">
+            </div>
+ 
+            <div class="dados">
+                <label for="rg">RG</label>
+                <input type="text" name="rg" id="rg" required minlength="7" maxlength="10">
+            </div>
+ 
+            <div class="dados">
+                <label for="aluno">Data de nascimento</label>
+                <input type="date" name="data" id="data" required>
+            </div>
+
+            </section>
+ 
+            <h2>Endereço</h2>
+ 
+            <section>
+ 
+            <div class="dados">
+                <label for="endereco">Endereço</label>
+                <input type="text" name="endereco" id="endereco">
+            </div>
+ 
+            <div class="dados">
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" id="bairro">
+            </div>
+ 
+            <div class="dados">
+                <label for="aluno">CEP</label>
+                <input type="number" name="CEP" id="CEP">
+            </div>
+ 
+            </section>
+
+            <section>
+
+            <div class="dados">
+                <label for="cidade">Cidade</label>
+                <input type="text" name="cidade" id="cidade">
+            </div>
+ 
+            <div class="dados">
+                <label for="estado">Estado</label>
+                <input type="text" name="estado" id="estado">
+            </div>
+
+            </section>
+ 
+            <h2>Informações Escolares</h2>
+ 
+            <section>
+ 
+            <div class="dados">
+                <label for="serie">Série</label>
+                <select name="serie" id="serie">
+                    <option value="" disabled selected>Selecione um turno</option>
+                    <option value="1-fun">1º Ano / Ensino Fundamental</option>
+                    <option value="2-fun">2º Ano / Ensino Fundamental</option>
+                    <option value="3-fun">3º Ano / Ensino Fundamental</option>
+                    <option value="4-fun">4º Ano / Ensino Fundamental</option>
+                    <option value="5-fun">5º Ano / Ensino Fundamental</option>
+                    <option value="6-fun">6º Ano / Ensino Fundamental</option>
+                    <option value="7-fun">7º Ano / Ensino Fundamental</option>
+                    <option value="8-fun">8º Ano / Ensino Fundamental</option>
+                    <option value="9-fun">9º Ano / Ensino Fundamental</option>
+                    <option value="1-med">1º Ano / Ensino Médio</option>
+                    <option value="2-med">2º Ano / Ensino Médio</option>
+                    <option value="3-med">3º Ano / Ensino Médio</option>
+                </select>
+            </div>
+ 
+            <div class="dados">
+                <label for="turno">Turno</label>
+                <select value="turno">
+                    <option value="" disabled selected>Selecione um turno</option>
+                    <option name="Dia" id="Dia">Dia</option>
+                    <option name="Tarde" id="Tarde">Tarde</option>
+                    <option name="Noite" id="Noite">Noite</option>
+                </select>
+            </div>
+ 
+            </section>
+          
+            <div class="botao">
+                <button id="enviar">Enviar</button>
+            </div>
+           
+        </main>
+ 
+    </form>
+ 
+</body>
+
+</html>

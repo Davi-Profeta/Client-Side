@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    border: solid black 2px;
+    padding: 2rem;
+}
+
+section{
+    margin: 1rem;
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.b{
+    margin: 1rem;
+}

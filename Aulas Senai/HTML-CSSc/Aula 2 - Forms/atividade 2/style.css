@@ -1,0 +1,73 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+h1{
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main{
+    background-color: white;
+    border: black 2px solid;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20rem;
+    height: 17rem;
+    margin-top: 1rem;
+}
+
+label{
+    background-color: white;
+}
+input{
+    background-color: white;
+    border: solid 2px black;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+    margin: 5px;
+    background-color: white;
+}
+#senha{
+    display: inline;
+}
+
+.baixo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin-top: 1rem;
+}
+#entrar{
+    width: 5rem;
+}
+
+a{
+    background-color: white;
+    text-decoration: none;
+}
+
+button{
+    background-color: white;
+}
+button:hover{
+    cursor: pointer;
+}
