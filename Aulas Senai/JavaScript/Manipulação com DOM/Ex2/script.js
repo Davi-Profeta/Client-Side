@@ -1,0 +1,1 @@
+let verde = document.getElementById("quadrado").style.backgroundColor = "red"

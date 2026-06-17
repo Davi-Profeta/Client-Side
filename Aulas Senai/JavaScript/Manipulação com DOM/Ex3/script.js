@@ -1,0 +1,1 @@
+let objeto = document.getElementById("quadrado").style.backgroundColor = "purple"
