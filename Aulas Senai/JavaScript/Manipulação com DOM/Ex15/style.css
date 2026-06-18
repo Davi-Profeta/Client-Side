@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.objeto{
+    background-color: white;
+    border: solid black 2px;
+    border-radius: 50%;
+    width: 35vw;
+    height: 45vh;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#btn-1{
+    margin: 2rem;
+}
+#btn-2{
+    margin: 2rem;
+}
