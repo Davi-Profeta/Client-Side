@@ -1,0 +1,10 @@
+#caixaVerde {
+    width: 200px;
+    height: 100px;
+    background-color: green;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
