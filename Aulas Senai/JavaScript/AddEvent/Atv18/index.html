@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 18 – Sistema de Vidas</title>
+    <style>
+        .painel-vidas {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #contadorVidas {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff4757;
+        }
+        button {
+            padding: 12px 28px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff4757;
+            color: white;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #ff6b81;
+        }
+        button:disabled {
+            background-color: #57606f;
+            cursor: not-allowed;
+        }
+        #mensagem {
+            margin-top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff4757;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="painel-vidas">
+        Vidas restantes: <span id="contadorVidas">5</span>
+    </div>
+    
+    <button id="btnTomarDano">Sofrer Dano</button>
+    
+    <div id="mensagem"></div>
+
+</body>
+    <script src="script.js"></script>
+</html>
