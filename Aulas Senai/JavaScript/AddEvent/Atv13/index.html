@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 13 - Caixa de Texto</title>
+    <style>
+        body {
+            display: flex;  
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        #campoTexto {
+            font-size: 18px;
+            padding: 8px;
+            width: 250px;
+        }
+
+        #visualizacao {
+            margin-top: 20px;
+            font-size: 24px;
+            min-height: 40px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="campoTexto" placeholder="Digite algo...">
+
+    <div id="visualizacao"></div>
+
+    <button id="botaoAtivar">Ativar evento</button>
+    <br>
+    <button id="botaoRemover">Remover evento</button>
+
+
+</body>
+    <script src="script.js"></script>
+</html>
