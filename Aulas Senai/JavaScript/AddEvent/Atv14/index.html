@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 14 - Mover Personagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #area {
+            position: relative;
+            width: 500px;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin: 30px auto;
+            background-color: #f5f5f5;
+        }
+
+        #personagem {
+            position: absolute;
+            top: 180px;
+            left: 230px;
+            width: 40px;
+            height: 40px;
+            background-color: #2196F3;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Atividade 14</h1>
+
+    <div id="area">
+        <div id="personagem"></div>
+    </div>
+
+    <button id="botaoAtivar">Ativar evento</button>
+    <button id="botaoRemover">Remover evento</button>
+
+</body>
+    <script src="script.js"></script>
+</html>
