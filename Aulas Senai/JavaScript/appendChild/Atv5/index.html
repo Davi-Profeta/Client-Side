@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 3rem;
+        }
+        .produto{
+            display: flex;
+            flex-direction: column;
+            width: 20vw;
+        }
+        #btn1{
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+            width: 10rem;
+        }
+        #btn2{
+            width: 10rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>e-Commerce</h1>
+    <br>
+    <div class="produto">
+        <label for="produto">Produto</label>
+        <input type="text" name="" id="produto" placeholder="Adicionar Produto">
+        <button id="btn1">Adicionar Produto</button>
+        <button id="btn2">Remover Produto</button>
+    </div>
+    
+    <h2>Lista de produtos:</h2>
+    <ul id="lista">
+
+    </ul>
+</body>
+    <script src="script.js"></script>
+</html>
