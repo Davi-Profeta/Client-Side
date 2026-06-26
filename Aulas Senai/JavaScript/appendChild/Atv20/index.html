@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 20 - Mural de Postagens</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #ffffff;
+    }
+
+    .area-publicacao {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 15px;
+    }
+
+    #campoTexto {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    #btnPublicar {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #btnRemover {
+      background-color: #e53935;
+      color: white;
+    }
+
+    #mural {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 500px;
+      min-height: 100px;
+      padding: 20px;
+      background-color: #2a2a40;
+      border-radius: 10px;
+    }
+
+    .postagem {
+      background-color: #3949ab;
+      padding: 14px 16px;
+      border-radius: 8px;
+      word-wrap: break-word;
+      animation: aparecer 0.2s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #status {
+      margin-top: 20px;
+      color: #aaaaaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mural de Postagens</h1>
+
+  <div class="area-publicacao">
+    <input type="text" id="campoTexto" placeholder="Escreva seu recado...">
+  </div>
+
+  <div class="botoes">
+    <button id="btnPublicar">Publicar</button>
+    <button id="btnRemover">Remover Última Postagem</button>
+  </div>
+
+  <div id="mural"></div>
+
+  <p id="status">Postagens no mural: 0</p>
+
+  <script>
+    const campoTexto = document.getElementById("campoTexto");
+    const btnPublicar = document.getElementById("btnPublicar");
+    const btnRemover = document.getElementById("btnRemover");
+    const mural = document.getElementById("mural");
+    const status = document.getElementById("status");
+
+    function atualizarStatus() {
+      status.innerText = "Postagens no mural: " + mural.children.length;
+      btnRemover.disabled = mural.children.length === 0;
+    }
+
+    function publicarPostagem() {
+      const texto = campoTexto.value.trim();
+
+      if (texto === "") {
+        campoTexto.focus();
+        return;
+      }
+
+      const divPostagem = document.createElement("div");
+      divPostagem.classList.add("postagem");
+      divPostagem.innerText = texto;
+
+      mural.appendChild(divPostagem);
+
+      campoTexto.value = "";
+      campoTexto.focus();
+      atualizarStatus();
+    }
+
+    function removerUltimaPostagem() {
+      const ultimaPostagem = mural.lastElementChild;
+
+      if (ultimaPostagem === null) {
+        return;
+      }
+
+      mural.removeChild(ultimaPostagem);
+      atualizarStatus();
+    }
+
+    function verificarEnter(evento) {
+      if (evento.key === "Enter") {
+        publicarPostagem();
+      }
+    }
+
+    btnPublicar.addEventListener("click", publicarPostagem);
+    btnRemover.addEventListener("click", removerUltimaPostagem);
+    campoTexto.addEventListener("keydown", verificarEnter);
+
+    atualizarStatus();
+  </script>
+
+</body>
+</html>
