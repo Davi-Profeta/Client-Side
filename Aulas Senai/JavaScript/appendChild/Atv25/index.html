@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 25 - Jogo das Bolinhas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    #btnCriar {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #btnRemover {
+      background-color: #e53935;
+      color: white;
+    }
+
+    #areaJogo {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+      background-color: #2a2a40;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .bolinha {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      animation: aparecer 0.2s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    #status {
+      margin-top: 20px;
+      color: #aaaaaa;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Jogo das Bolinhas</h1>
+
+  <div class="botoes">
+    <button id="btnCriar">Criar Bolinha</button>
+    <button id="btnRemover">Remover Bolinha</button>
+  </div>
+
+  <div id="areaJogo"></div>
+
+  <p id="status">Bolinhas na tela: 0</p>
+
+  <script>
+    const TAMANHO_BOLINHA = 40;
+
+    const areaJogo = document.getElementById("areaJogo");
+    const btnCriar = document.getElementById("btnCriar");
+    const btnRemover = document.getElementById("btnRemover");
+    const status = document.getElementById("status");
+
+    function atualizarStatus() {
+      status.innerText = "Bolinhas na tela: " + areaJogo.children.length;
+      btnRemover.disabled = areaJogo.children.length === 0;
+    }
+
+    function gerarCorAleatoria() {
+      const corR = Math.floor(Math.random() * 256);
+      const corG = Math.floor(Math.random() * 256);
+      const corB = Math.floor(Math.random() * 256);
+      return "rgb(" + corR + ", " + corG + ", " + corB + ")";
+    }
+
+    function gerarPosicaoAleatoria(limite) {
+      return Math.floor(Math.random() * (limite - TAMANHO_BOLINHA));
+    }
+
+    function criarBolinha() {
+      const bolinha = document.createElement("div");
+      bolinha.classList.add("bolinha");
+
+      bolinha.style.backgroundColor = gerarCorAleatoria();
+      bolinha.style.left = gerarPosicaoAleatoria(areaJogo.clientWidth) + "px";
+      bolinha.style.top = gerarPosicaoAleatoria(areaJogo.clientHeight) + "px";
+
+      areaJogo.appendChild(bolinha);
+
+      atualizarStatus();
+    }
+
+    function removerBolinha() {
+      const ultimaBolinha = areaJogo.lastElementChild;
+
+      if (ultimaBolinha === null) {
+        return;
+      }
+
+      areaJogo.removeChild(ultimaBolinha);
+      atualizarStatus();
+    }
+
+    btnCriar.addEventListener("click", criarBolinha);
+    btnRemover.addEventListener("click", removerBolinha);
+
+    atualizarStatus();
+  </script>
+
+</body>
+</html>
