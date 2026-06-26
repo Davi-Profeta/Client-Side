@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 19 - Alfabeto Dinâmico</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #ffffff;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    #btnAdicionar {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #btnRemover {
+      background-color: #e53935;
+      color: white;
+    }
+
+    #containerLetras {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      max-width: 700px;
+      min-height: 70px;
+      padding: 20px;
+      background-color: #2a2a40;
+      border-radius: 10px;
+    }
+
+    .letra {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      background-color: #3949ab;
+      border-radius: 8px;
+      animation: aparecer 0.2s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    #status {
+      margin-top: 20px;
+      color: #aaaaaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Alfabeto Dinâmico</h1>
+
+  <div class="botoes">
+    <button id="btnAdicionar">Adicionar Letra</button>
+    <button id="btnRemover">Remover Letra</button>
+  </div>
+
+  <div id="containerLetras"></div>
+
+  <p id="status">Letras na tela: 0</p>
+
+  <script>
+    const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let indiceAtual = 0;
+
+    const containerLetras = document.getElementById("containerLetras");
+    const btnAdicionar = document.getElementById("btnAdicionar");
+    const btnRemover = document.getElementById("btnRemover");
+    const status = document.getElementById("status");
+
+    function atualizarStatus() {
+      status.innerText = "Letras na tela: " + containerLetras.children.length;
+      btnRemover.disabled = containerLetras.children.length === 0;
+      btnAdicionar.disabled = indiceAtual >= alfabeto.length;
+    }
+
+    function adicionarLetra() {
+      if (indiceAtual >= alfabeto.length) {
+        return;
+      }
+
+      const letra = alfabeto[indiceAtual];
+
+      const divLetra = document.createElement("div");
+      divLetra.classList.add("letra");
+      divLetra.innerText = letra;
+
+      containerLetras.appendChild(divLetra);
+
+      indiceAtual++;
+      atualizarStatus();
+    }
+
+    function removerLetra() {
+      const ultimaLetra = containerLetras.lastElementChild;
+
+      if (ultimaLetra === null) {
+        return;
+      }
+
+      containerLetras.removeChild(ultimaLetra);
+      indiceAtual--;
+      atualizarStatus();
+    }
+
+    btnAdicionar.addEventListener("click", adicionarLetra);
+    btnRemover.addEventListener("click", removerLetra);
+
+    atualizarStatus();
+  </script>
+
+</body>
+</html>
