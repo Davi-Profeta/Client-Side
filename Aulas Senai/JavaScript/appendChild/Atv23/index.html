@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 23 - Gerador de Cartões de Produtos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    #btnAdicionar {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #btnRemover {
+      background-color: #e53935;
+      color: white;
+    }
+
+    #catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      max-width: 700px;
+      min-height: 100px;
+      padding: 20px;
+      background-color: #2a2a40;
+      border-radius: 10px;
+    }
+
+    .cartao-produto {
+      width: 160px;
+      background-color: #292942;
+      border: 2px solid #3949ab;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      animation: aparecer 0.2s ease;
+    }
+
+    .nome-produto {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .preco-produto {
+      font-size: 15px;
+      color: #66bb6a;
+      font-weight: bold;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    #status {
+      margin-top: 20px;
+      color: #aaaaaa;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Gerador de Cartões de Produtos</h1>
+
+  <div class="botoes">
+    <button id="btnAdicionar">Novo Produto</button>
+    <button id="btnRemover">Remover Último Produto</button>
+  </div>
+
+  <div id="catalogo"></div>
+
+  <p id="status">Produtos no catálogo: 0</p>
+
+  <script>
+    const produtos = [
+      { nome: "Notebook", preco: "R$ 3.500,00" },
+      { nome: "Mouse Gamer", preco: "R$ 120,00" },
+      { nome: "Teclado Mecânico", preco: "R$ 280,00" },
+      { nome: "Monitor 24''", preco: "R$ 950,00" },
+      { nome: "Headset Bluetooth", preco: "R$ 199,90" },
+      { nome: "Webcam Full HD", preco: "R$ 159,00" }
+    ];
+
+    let indiceAtual = 0;
+
+    const catalogo = document.getElementById("catalogo");
+    const btnAdicionar = document.getElementById("btnAdicionar");
+    const btnRemover = document.getElementById("btnRemover");
+    const status = document.getElementById("status");
+
+    function atualizarStatus() {
+      status.innerText = "Produtos no catálogo: " + catalogo.children.length;
+      btnRemover.disabled = catalogo.children.length === 0;
+      btnAdicionar.disabled = indiceAtual >= produtos.length;
+    }
+
+    function criarCartaoProduto(produto) {
+      const cartao = document.createElement("div");
+      cartao.classList.add("cartao-produto");
+
+      const nome = document.createElement("p");
+      nome.classList.add("nome-produto");
+      nome.innerText = produto.nome;
+
+      const preco = document.createElement("p");
+      preco.classList.add("preco-produto");
+      preco.innerText = produto.preco;
+
+      cartao.appendChild(nome);
+      cartao.appendChild(preco);
+
+      return cartao;
+    }
+
+    function adicionarProduto() {
+      if (indiceAtual >= produtos.length) {
+        return;
+      }
+
+      const produtoAtual = produtos[indiceAtual];
+      const cartao = criarCartaoProduto(produtoAtual);
+
+      catalogo.appendChild(cartao);
+
+      indiceAtual++;
+      atualizarStatus();
+    }
+
+    function removerUltimoProduto() {
+      const ultimoCartao = catalogo.lastElementChild;
+
+      if (ultimoCartao === null) {
+        return;
+      }
+
+      catalogo.removeChild(ultimoCartao);
+      indiceAtual--;
+      atualizarStatus();
+    }
+
+    btnAdicionar.addEventListener("click", adicionarProduto);
+    btnRemover.addEventListener("click", removerUltimoProduto);
+
+    atualizarStatus();
+  </script>
+
+</body>
+</html>
