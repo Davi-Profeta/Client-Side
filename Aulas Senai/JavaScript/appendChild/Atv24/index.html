@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 24 - Histórico de Eventos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    #btnEntrar {
+      background-color: #1e88e5;
+      color: white;
+    }
+
+    #btnSalvar {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #btnSair {
+      background-color: #e53935;
+      color: white;
+    }
+
+    .painel {
+      width: 100%;
+      max-width: 550px;
+      background-color: #2a2a40;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .painel h2 {
+      font-size: 16px;
+      color: #aaaaaa;
+      margin-bottom: 12px;
+    }
+
+    #historico {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 60px;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    .evento {
+      background-color: #3949ab;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      animation: aparecer 0.2s ease;
+    }
+
+    .evento .hora {
+      color: #c5cae9;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #status {
+      margin-top: 20px;
+      color: #aaaaaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Histórico de Eventos</h1>
+
+  <div class="botoes">
+    <button id="btnEntrar">Entrar</button>
+    <button id="btnSalvar">Salvar</button>
+    <button id="btnSair">Sair</button>
+  </div>
+
+  <div class="painel">
+    <h2>Registro de ações</h2>
+    <ul id="historico"></ul>
+  </div>
+
+  <p id="status">Eventos registrados: 0</p>
+
+  <script>
+    const historico = document.getElementById("historico");
+    const status = document.getElementById("status");
+
+    const btnEntrar = document.getElementById("btnEntrar");
+    const btnSalvar = document.getElementById("btnSalvar");
+    const btnSair = document.getElementById("btnSair");
+
+    function obterDataHoraAtual() {
+      const agora = new Date();
+      const data = agora.toLocaleDateString("pt-BR");
+      const hora = agora.toLocaleTimeString("pt-BR");
+      return data + " " + hora;
+    }
+
+    function atualizarStatus() {
+      status.innerText = "Eventos registrados: " + historico.children.length;
+    }
+
+    function registrarEvento(mensagem) {
+      const itemEvento = document.createElement("li");
+      itemEvento.classList.add("evento");
+
+      const textoMensagem = document.createElement("span");
+      textoMensagem.innerText = mensagem;
+
+      const textoHora = document.createElement("span");
+      textoHora.classList.add("hora");
+      textoHora.innerText = obterDataHoraAtual();
+
+      itemEvento.appendChild(textoMensagem);
+      itemEvento.appendChild(textoHora);
+
+      historico.appendChild(itemEvento);
+
+      atualizarStatus();
+    }
+
+    function registrarEntrada() {
+      registrarEvento("Usuário entrou no sistema");
+    }
+
+    function registrarSalvamento() {
+      registrarEvento("Usuário salvou os dados");
+    }
+
+    function registrarSaida() {
+      registrarEvento("Usuário saiu do sistema");
+    }
+
+    btnEntrar.addEventListener("click", registrarEntrada);
+    btnSalvar.addEventListener("click", registrarSalvamento);
+    btnSair.addEventListener("click", registrarSaida);
+
+    atualizarStatus();
+  </script>
+
+</body>
+</html>
