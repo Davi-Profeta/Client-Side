@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 22 - Painel de Notícias</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    #btnNovaNoticia {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #btnRemover {
+      background-color: #e53935;
+      color: white;
+    }
+
+    #painel {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 550px;
+      min-height: 100px;
+      padding: 20px;
+      background-color: #2a2a40;
+      border-radius: 10px;
+    }
+
+    .noticia {
+      background-color: #3949ab;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border-left: 4px solid #fb8c00;
+      font-size: 16px;
+      animation: aparecer 0.2s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #status {
+      margin-top: 20px;
+      color: #aaaaaa;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Painel de Notícias</h1>
+
+  <div class="botoes">
+    <button id="btnNovaNoticia">Nova Notícia</button>
+    <button id="btnRemover">Remover Última Notícia</button>
+  </div>
+
+  <div id="painel"></div>
+
+  <p id="status">Notícias exibidas: 0</p>
+
+  <script>
+    const manchetes = [
+      "Mercado financeiro tem alta após anúncio do governo",
+      "Cientistas descobrem nova espécie de planta na Amazônia",
+      "Time local vence campeonato após 10 anos de espera",
+      "Tecnologia de IA é usada para prever enchentes em cidades",
+      "Novo parque inaugura no centro da cidade com área verde"
+    ];
+
+    let indiceAtual = 0;
+
+    const painel = document.getElementById("painel");
+    const btnNovaNoticia = document.getElementById("btnNovaNoticia");
+    const btnRemover = document.getElementById("btnRemover");
+    const status = document.getElementById("status");
+
+    function atualizarStatus() {
+      status.innerText = "Notícias exibidas: " + painel.children.length;
+      btnRemover.disabled = painel.children.length === 0;
+      btnNovaNoticia.disabled = indiceAtual >= manchetes.length;
+    }
+
+    function adicionarNoticia() {
+      if (indiceAtual >= manchetes.length) {
+        return;
+      }
+
+      const paragrafoNoticia = document.createElement("p");
+      paragrafoNoticia.classList.add("noticia");
+      paragrafoNoticia.innerText = manchetes[indiceAtual];
+
+      painel.appendChild(paragrafoNoticia);
+
+      indiceAtual++;
+      atualizarStatus();
+    }
+
+    function removerUltimaNoticia() {
+      const ultimaNoticia = painel.lastElementChild;
+
+      if (ultimaNoticia === null) {
+        return;
+      }
+
+      painel.removeChild(ultimaNoticia);
+      indiceAtual--;
+      atualizarStatus();
+    }
+
+    btnNovaNoticia.addEventListener("click", adicionarNoticia);
+    btnRemover.addEventListener("click", removerUltimaNoticia);
+
+    atualizarStatus();
+  </script>
+
+</body>
+</html>
