@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Atividade 8 - Cadastro de Jogos</title>
+<style>
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
+
+  h1 {
+    color: #4dd0e1;
+  }
+
+  .form-container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+  }
+
+  input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #2a2a2a;
+    color: #fff;
+  }
+
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4dd0e1;
+    color: #121212;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+
+  button:hover {
+    background-color: #26c6da;
+  }
+
+  ul {
+    list-style: none;
+    width: 300px;
+    margin-top: 20px;
+    padding: 0;
+  }
+
+  li {
+    background-color: #1e1e1e;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 4px solid #4dd0e1;
+  }
+
+  #mensagem {
+    margin-top: 15px;
+    color: #e57373;
+    font-weight: bold;
+    min-height: 20px;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Cadastro de Jogos</h1>
+
+  <div class="form-container">
+    <input type="text" id="inputNome" placeholder="Nome do jogo">
+    <input type="text" id="inputPlataforma" placeholder="Plataforma">
+    <button id="btnCadastrar">Cadastrar Jogo</button>
+  </div>
+
+  <ul id="listaJogos"></ul>
+  <p id="mensagem"></p>
+
+  <script>
+    const inputNome = document.getElementById("inputNome");
+    const inputPlataforma = document.getElementById("inputPlataforma");
+    const btnCadastrar = document.getElementById("btnCadastrar");
+    const listaJogos = document.getElementById("listaJogos");
+    const mensagem = document.getElementById("mensagem");
+
+    function carregarJogos() {
+      const dados = localStorage.getItem("jogos");
+      return dados ? JSON.parse(dados) : [];
+    }
+
+    function salvarJogos(jogos) {
+      localStorage.setItem("jogos", JSON.stringify(jogos));
+    }
+
+    function renderizarJogos() {
+      listaJogos.innerHTML = "";
+      const jogos = carregarJogos();
+
+      jogos.forEach(function (jogo) {
+        const item = document.createElement("li");
+        item.textContent = jogo.nome + " - " + jogo.plataforma;
+        listaJogos.appendChild(item);
+      });
+    }
+
+    function cadastrarJogo() {
+      const nome = inputNome.value.trim();
+      const plataforma = inputPlataforma.value.trim();
+
+      if (nome === "" || plataforma === "") {
+        mensagem.textContent = "Preencha nome e plataforma.";
+        return;
+      }
+
+      const jogos = carregarJogos();
+      jogos.push({ nome: nome, plataforma: plataforma });
+      salvarJogos(jogos);
+
+      inputNome.value = "";
+      inputPlataforma.value = "";
+      mensagem.textContent = "";
+
+      renderizarJogos();
+    }
+
+    btnCadastrar.addEventListener("click", cadastrarJogo);
+
+    renderizarJogos();
+  </script>
+
+</body>
+</html>
